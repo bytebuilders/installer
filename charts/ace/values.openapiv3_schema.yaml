@@ -15707,6 +15707,8 @@ properties:
             type: object
           databaseName:
             type: string
+          logSql:
+            type: boolean
           persistence:
             properties:
               size:
@@ -15756,6 +15758,7 @@ properties:
         required:
         - auth
         - databaseName
+        - logSql
         - persistence
         - resources
         - terminationPolicy

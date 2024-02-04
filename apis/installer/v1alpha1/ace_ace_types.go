@@ -398,6 +398,7 @@ type DBSettings struct {
 	Persistence       PersistenceSpec           `json:"persistence"`
 	Resources         core.ResourceRequirements `json:"resources"`
 	Auth              BasicAuth                 `json:"auth"`
+	LogSql            bool                      `json:"logSql"`
 }
 
 type CacheSettings struct {
