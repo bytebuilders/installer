@@ -208,3 +208,31 @@ stringData:
     LOGO = `{{ .Values.branding.logo }}`
     FAVICON = `{{ .Values.branding.favicon }}`
     PRIMARY_COLOR = `{{ .Values.branding.primaryColor }}`
+
+    {{- if (eq .Values.global.platform.deploymentType "SelfHostedProductionAWS") (eq .Values.global.platform.deploymentType "SelfHostedProductionAZURE") (eq .Values.global.platform.deploymentType "SelfHostedProductionGCP") }}
+    [capi_cluster_create]
+    CLUSTER_NAME = {{ .Values.clusterCreateInfo.clusterName }}
+    CIDR_RANGE = {{ .Values.clusterCreateInfo.cidrRange }}
+    REGION = {{ .Values.clusterCreateInfo.region }}
+    PROJECT_ID = {{ .Values.clusterCreateInfo.projectId }}
+    KUBERNETES_VERSION = {{ .Values.clusterCreateInfo.kubernetesVersion }}
+
+    [capi_cred]
+    {{- if (eq .Values.global.platform.deploymentType "SelfHostedProductionAWS") }}
+    PROVIDER = eks
+    ACCESS_TOKEN = {{ .Values.capa.cred.accessToken }}
+    SECRET_KEY = {{ .Values.capa.cred.secretKey }}
+    {{- end}}
+    {{- if (eq .Values.global.platform.deploymentType "SelfHostedProductionAZURE") }}
+    PROVIDER = aks
+    SUBSCRIPTION_ID = {{ .Values.capz.cred.subscriptionId }}
+    TENANT_ID = {{ .Values.capz.cred.tenantId }}
+    CLIENT_ID = {{ .Values.capz.cred.clientId }}
+    CLIENT_SECRET = {{ .Values.capz.cred.clientSecret }}
+    {{- end}}
+    {{- if (eq .Values.global.platform.deploymentType "SelfHostedProductionGCP") }}
+    PROVIDER = gke
+    PROJECT_ID = {{ .Values.capg.cred.projectId }}
+    SERVICE_ACCOUNT = {{ .Values.capg.cred.serviceAccount }}
+    {{- end}}
+    {{- end}}

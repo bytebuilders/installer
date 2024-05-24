@@ -457,6 +457,9 @@ properties:
         - SelfHostedProduction
         - SelfHostedDemo
         - OnpremDemo
+        - SelfHostedProductionAWS
+        - SelfHostedProductionAZURE
+        - SelfHostedProductionGCP
         type: string
       domain:
         type: string

@@ -81,6 +81,8 @@ type AceSpec struct {
 	Affinity       *core.Affinity        `json:"affinity"`
 	Branding       AceBrandingSpec       `json:"branding"`
 	SelfManagement AceSelfManagementSpec `json:"selfManagement"`
+	//+optional
+	CAPI CAPIValues `json:"capi"`
 }
 
 type AceBilling struct {
