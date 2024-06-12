@@ -1,3 +1,4 @@
+{{- if not .Values.kubeconfigSecretName }}
 apiVersion: work.open-cluster-management.io/v1alpha1
 kind: ManifestWorkReplicaSet
 metadata:
@@ -60,3 +61,4 @@ spec:
               resources:
               - apiservices
               verbs: [ "*" ]
+{{- end }}
