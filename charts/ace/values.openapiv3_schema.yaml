@@ -1917,6 +1917,66 @@ properties:
       primaryColor:
         type: string
     type: object
+  capi:
+    properties:
+      aws:
+        properties:
+          accessKeyID:
+            type: string
+          secretAccessKey:
+            type: string
+        required:
+        - accessKeyID
+        - secretAccessKey
+        type: object
+      azure:
+        properties:
+          clientID:
+            type: string
+          clientSecret:
+            type: string
+          subscriptionID:
+            type: string
+          tenantID:
+            type: string
+        required:
+        - clientID
+        - clientSecret
+        - subscriptionID
+        - tenantID
+        type: object
+      createOptions:
+        properties:
+          CIDRRange:
+            type: string
+          clusterName:
+            type: string
+          kuberenetesVersion:
+            type: string
+          machineType:
+            type: string
+          projectID:
+            type: string
+          region:
+            type: string
+        required:
+        - CIDRRange
+        - clusterName
+        - kuberenetesVersion
+        - machineType
+        - region
+        type: object
+      googleCloud:
+        properties:
+          projectID:
+            type: string
+          serviceAccount:
+            type: string
+        required:
+        - projectID
+        - serviceAccount
+        type: object
+    type: object
   cluster-ui:
     properties:
       affinity:

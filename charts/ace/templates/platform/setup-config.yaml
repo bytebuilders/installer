@@ -1,0 +1,28 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: {{ include "settings.setupConfigSecretName" . }}
+  namespace: {{ .Release.Namespace }}
+  labels:
+    {{- include "ace.labels" . | nindent 4 }}
+stringData:
+  {{- if .Values.capa }}
+  capa: |
+{{ toYaml .Values.capa | indent 4 }}
+  {{- end }}
+  {{- if .Values.capg }}
+  capg: |
+{{ toYaml .Values.capg | indent 4 }}
+  {{- end }}
+  {{- if .Values.capz }}
+  capz: |
+{{ toYaml .Values.capz | indent 4 }}
+  {{- end }}
+  {{- if .Values.clusterCreateInfo }}
+  clusterCreateInfo: |
+{{ toYaml .Values.clusterCreateInfo | indent 4 }}
+  {{- end }}
+  {{- if .Values.selfManagement }}
+  selfManagement: |
+{{ toYaml .Values.selfManagement | indent 4 }}
+  {{- end }}

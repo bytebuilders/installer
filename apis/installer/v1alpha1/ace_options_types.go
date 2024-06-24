@@ -74,6 +74,44 @@ type AceOptionsSpec struct {
 	S3proxy        AceOptionsComponentSpec  `json:"s3proxy"`
 	Branding       AceBrandingSpec          `json:"branding"`
 	SelfManagement AceSelfManagementOptions `json:"selfManagement"`
+	CAPI           CAPIValues               `json:"capi"`
+}
+
+type CAPIValues struct {
+	// +optional
+	AWS AWSCredential `json:"aws,omitempty"`
+	// +optional
+	Azure AzureCredential `json:"azure,omitempty"`
+	// +optional
+	GoogleCloud GoogleCloudCredential `json:"googleCloud,omitempty"`
+	// +optional
+	CreateOptions CAPICreateOptions `json:"createOptions"`
+}
+
+type AWSCredential struct {
+	AccessKeyID     string `json:"accessKeyID"`
+	SecretAccessKey string `json:"secretAccessKey"`
+}
+
+type AzureCredential struct {
+	TenantID       string `json:"tenantID"`
+	SubscriptionID string `json:"subscriptionID"`
+	ClientID       string `json:"clientID"`
+	ClientSecret   string `json:"clientSecret"`
+}
+
+type GoogleCloudCredential struct {
+	ProjectID      string `json:"projectID"`
+	ServiceAccount string `json:"serviceAccount"`
+}
+
+type CAPICreateOptions struct {
+	ClusterName       string `json:"clusterName"`
+	Region            string `json:"region"`
+	CIDRRange         string `json:"CIDRRange"`
+	ProjectID         string `json:"projectID,omitempty"`
+	KubernetesVersion string `json:"kuberenetesVersion"`
+	MachineType       string `json:"machineType"`
 }
 
 type AceSelfManagementOptions struct {

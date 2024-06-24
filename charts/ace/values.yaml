@@ -461,3 +461,27 @@ selfManagement:
   import: true
   enableMonitoring: true
   enableServiceBackend: true
+
+# capi related info
+capa:
+  accessToken: ""
+  secretKey: ""
+
+capg:
+  projectId: ""
+  serviceAccount: ""
+
+capz:
+  subscriptionId: ""
+  tenantId: ""
+  clientId: ""
+  clientSecret: ""
+
+
+clusterCreateInfo:
+  clusterName: ""
+  region: ""
+  cidrRange: ""
+  projectId: ""
+  kubernetesVersion: ""
+  machineType: ""
