@@ -80,6 +80,7 @@ type AceSpec struct {
 	Tolerations    []core.Toleration     `json:"tolerations"`
 	Affinity       *core.Affinity        `json:"affinity"`
 	Branding       AceBrandingSpec       `json:"branding"`
+	James          AceJamesSpec          `json:"james"`
 	SelfManagement AceSelfManagementSpec `json:"selfManagement"`
 	SetupJob       AceSetupJob           `json:"setupJob"`
 }
