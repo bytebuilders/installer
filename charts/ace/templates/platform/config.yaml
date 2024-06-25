@@ -208,3 +208,11 @@ stringData:
     LOGO = `{{ .Values.branding.logo }}`
     FAVICON = `{{ .Values.branding.favicon }}`
     PRIMARY_COLOR = `{{ .Values.branding.primaryColor }}`
+
+    [james]
+    Enable = {{ .Values.James.Enable }}
+    Url = {{ .Values.James.Url }}
+    HttpPort = {{ .Values.James.HttpPort }}
+    AdminToken = `{{ .Values.James.AdminToken }}`
+    PrivateKey = `{{ .Values.James.PrivateKey }}`
+
