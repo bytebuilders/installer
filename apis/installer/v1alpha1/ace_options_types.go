@@ -73,6 +73,7 @@ type AceOptionsSpec struct {
 	SMTPRelay      AceOptionsComponentSpec  `json:"smtprelay"`
 	S3proxy        AceOptionsComponentSpec  `json:"s3proxy"`
 	Branding       AceBrandingSpec          `json:"branding"`
+	James          AceJamesSpec             `json:"james"`
 	SelfManagement AceSelfManagementOptions `json:"selfManagement"`
 }
 
